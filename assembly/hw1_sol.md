@@ -1,4 +1,5 @@
 <code>
+            
             .global main
     main:   save    %sp, -96, %sp
             mov     %g0, %o1
@@ -22,4 +23,5 @@
 
     next_r: ret
             restore
+            
 </code>
