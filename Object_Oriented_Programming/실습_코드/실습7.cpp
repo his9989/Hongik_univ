@@ -11,10 +11,10 @@ public:
 	int getHeight() {
 		return height;
 	}
-	// Tower classÀÇ ¸â¹öÇÔ¼ö·Î ±¸ÇöÇÑ °æ¿ì
+	// Tower classì˜ ë©¤ë²„í•¨ìˆ˜ë¡œ êµ¬í˜„í•œ ê²½ìš°
 	//Tower operator+ (Tower op2);
 
-	// Tower classÀÇ ¿ÜºÎÇÔ¼ö·Î ±¸ÇöÇÑ °æ¿ì
+	// Tower classì˜ ì™¸ë¶€í•¨ìˆ˜ë¡œ êµ¬í˜„í•œ ê²½ìš°
 	friend Tower operator+(Tower op1, Tower op2);
 };
 
@@ -27,7 +27,7 @@ Tower::Tower(int _height) {
 }
 
 /*
-// Tower classÀÇ ¸â¹öÇÔ¼ö·Î ±¸ÇöÇÑ °æ¿ì
+// Tower classì˜ ë©¤ë²„í•¨ìˆ˜ë¡œ êµ¬í˜„í•œ ê²½ìš°
 Tower Tower::operator+(Tower op2) {
 	Tower temp;
 	temp.height = this->height + op2.height;
@@ -35,7 +35,7 @@ Tower Tower::operator+(Tower op2) {
 }
 */
 
-// Tower classÀÇ ¿ÜºÎÇÔ¼ö·Î ±¸ÇöÇÑ °æ¿ì
+// Tower classì˜ ì™¸ë¶€í•¨ìˆ˜ë¡œ êµ¬í˜„í•œ ê²½ìš°
 Tower operator+(Tower op1, Tower op2) {
 	Tower tmp;
 	tmp.height = op1.height + op2.height;
