@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-	printf("��ǻ�Ͱ��а�\n");
+	printf("ÄÄÇ»ÅÍ°øÇÐ°ú\n");
 	printf("B411236\n");
-	printf("���μ�\n");
+	printf("ÇÑÀÎ¼ö\n");
 	return 0;
 }
