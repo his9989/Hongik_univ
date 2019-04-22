@@ -1,66 +1,90 @@
+//generalization : superclass
+//specialization : subclass
+//inheritence : superclass에서 subclass를 만드는 것
+//overriding(polymorphism) : subclass에서 superclass의 멤버함수를 변경하는 것
+//overloading : 생성자 오버로딩만 하나 하자
+
 #include<iostream>
 using namespace std;
 
-class Shape {
-private:
+// superclass, generalization
+class Polygon {
+protected:
+	int width, height;
 public:
-	Shape() {
-		cout << "This is Shape class" << endl;
-	};
-	virtual ~Shape() {
-		cout << "Delete Shape class" << endl;
+	Polygon() {
+		cout << "Polygon Constructor" << endl;
 	}
-	virtual void draw() {
-		cout << "I have no value" << endl;
+	Polygon(int a, int b) {
+		cout << "Polygon Constructor width = "<<a<<", height =  "<<b<< endl;
+	}
+	void set_values(int a, int b) {
+		width = a, height = b;
+	}
+	void check() {
+		cout << "Polygon" << endl;
 	}
 };
 
-class Rectangle :public Shape {
+// inheritence
+// subclass, specialization
+class Rectangle : public Polygon {
 public:
 	Rectangle() {
-		cout << "This is Rectangle" << endl;
+		cout << "Rectangle Constructor" << endl;
 	}
-	~Rectangle() {
-		cout << "Delete Rectangle" << endl;
+	Rectangle(int a, int b) {
+		cout << "Rectangle Constructor width = " << a << ", height =  " << b << endl;
 	}
-	void draw() {
-		cout << "Rectangle area is 50" << endl;
+	int area() {
+		return width * height;
+	}
+	// overriding
+	void check() {
+		cout << "Rectangel" << endl;
 	}
 };
 
-class Circle : public Shape {
+class Triangle : public Polygon {
 public:
-	Circle() {
-		cout << "This is Circle" << endl;
+	Triangle() {
+		cout << "Triangle Constructor" << endl;
 	}
-	~Circle() {
-		cout << "Delete Circle" << endl;
+	Triangle(int a, int b) {
+		cout << "Triangle Constructor width = " << a << ", height =  " << b << endl;
 	}
-	void draw() {
-		cout << "Rectangle area is 500" << endl;
+	int area() {
+		return width * height * 0.5;
+	}
+	// overriding
+	void check() {
+		cout << "Triangle" << endl;
 	}
 };
-
 
 int main() {
-	Shape a;
-	cout << endl;
-	a.draw();
-	cout << endl;
+	Polygon p;
 	Rectangle r;
-	cout << endl;
-	r.draw();
-	cout << endl;
-	Circle c;
-	cout << endl;
-	c.draw();
-	cout << "-----------"<<endl;
-/*
-	a.~Shape();
-	cout << endl;
-	r.~Rectangle();
-	cout << endl;
-	c.~Circle();
-	cout << endl;
-	*/
+	Triangle t;
+	cout << "---" << endl;
+	p.check();
+	r.check();
+	t.check();
+	cout << "---" << endl;
+	r.set_values(3, 4);
+	t.set_values(3, 4);
+	cout << "---" << endl;
+	Polygon p2(3, 4);
+	// subclass에서 overloading된 constructor를 호출하는 경우
+	// superclass의 default constructor가 호출된다.
+	Rectangle r2(3, 4);
+	Triangle t2(3, 4);
+	cout << "---" << endl;
+	r2.set_values(3, 4);
+	t2.set_values(3, 4);
+	cout << "---" << endl;
+	cout << r.area() << endl;
+	cout << r2.area() << endl;
+	cout << t.area() << endl;
+	cout << t2.area() << endl;
 }
