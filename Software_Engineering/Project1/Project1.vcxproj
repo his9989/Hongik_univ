@@ -120,11 +120,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Ticket.h" />
-    <ClCompile Include="timer.h" />
+    <ClCompile Include="Ticket.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TimerUI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ticketManager.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Ticket.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="TimerUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
